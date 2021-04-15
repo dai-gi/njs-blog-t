@@ -1,13 +1,21 @@
-import Head from 'next/head'
-
+import Image from "next/image";
+import Head from "next/head";
 
 export default function Home() {
   return (
     <div>
-      <head>
+      <Head>
         <title>NextJS Startup</title>
-      </head>
-      <h1 className="text-9xl flex justify-center h-screen items-center text-indigo-500">Tailwind CSS</h1>
+      </Head>
+      <div className="mb-10 p-3 border rounded">
+        <Image
+          className="object-cover rounded"
+          src="/top.png"
+          alt="top"
+          width={1280}
+          height={500}
+        />
+      </div>
     </div>
-  )
+  );
 }
