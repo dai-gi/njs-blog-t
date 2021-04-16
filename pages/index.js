@@ -16,6 +16,10 @@ export default function Home() {
           height={500}
         />
       </div>
+      <div className="flex justify-center flex-col items-center mb-10">
+        <div className="text-lg mb-3">BLOG POSTS</div>
+        <div className="border w-14"></div>
+      </div>
     </div>
   );
 }
