@@ -27,3 +27,12 @@ export default function Home() {
     </div>
   );
 }
+
+
+export async function getStaticPorps() {
+  const post = await getAllPostsData();
+  return {
+    props: {posts},
+    revalidate: 3
+  }
+}
