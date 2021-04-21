@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Head from "next/head";
 import Post from "../components/post/post";
+import {getAllPostsData} from "../lib/posts";
 
-export default function Home() {
+export default function Home({ posts }) {
   return (
     <div>
       <Head>
@@ -30,9 +31,9 @@ export default function Home() {
 
 
 export async function getStaticPorps() {
-  const post = await getAllPostsData();
+  const posts = await getAllPostsData();
   return {
-    props: {posts},
-    revalidate: 3
+    props: { posts },
+    revalidate: 3,
   }
 }
