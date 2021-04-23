@@ -19,3 +19,13 @@ export default function PostData([ post ]) {
         </div>
     );
 }
+
+// 投稿一覧んおIDを取得
+export async function getStaticPaths() {
+    const paths = await getAllPostIds();
+
+    return {
+        paths,
+        fallback: true,
+    };
+}
