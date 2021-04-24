@@ -29,3 +29,14 @@ export async function getStaticPaths() {
         fallback: true,
     };
 }
+
+// 投稿詳細のデータを取得
+export async function getStaticProps({params}) {
+    const post = await getPostData(params.id);
+    return {
+        props: {
+            post,
+        },
+        rebalidata: 3,
+    };
+}
