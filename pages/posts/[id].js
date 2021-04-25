@@ -1,9 +1,9 @@
 import { useRouter } from "next/router";
 import { getAllPostIds, getPostData } from "../../lib/posts";
 
-export default function PostData([ post ]) {
+export default function PostData({ post }) {
     const router = useRouter();
-    
+
     if (router.isFallback || !post) {
         return <div>Loading...</div>;
     }
@@ -37,6 +37,6 @@ export async function getStaticProps({params}) {
         props: {
             post,
         },
-        rebalidata: 3,
+        revalidate: 3,
     };
 }
